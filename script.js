@@ -39,7 +39,7 @@ function listaProduto(){
             <button class="btn btn-primary">Editar</button>
         </td>
         <td>
-            <button class="btn btn-primary">Deletar</button>
+            <button onclick="deletaProduto(${i})" class="btn btn-primary">Deletar</button>
         </td>
         <tr>`;
     }
@@ -47,4 +47,7 @@ function listaProduto(){
 }
 
 
-
+function deletaProduto(i){
+    produtos.splice(i,1);
+    listaProduto()
+}
