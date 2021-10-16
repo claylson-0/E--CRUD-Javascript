@@ -12,7 +12,7 @@
 <body>
 
     <div class="container">
-        
+        <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Nome do produto</label>
               <input id="nome-produto" type="text" class="form-control" >
@@ -35,10 +35,8 @@
             <div class="col-12">
               <button id="btn-cria" onclick="criaProduto()"  class="btn btn-primary">Criar</button>
             </div>
-          
+          </div>
     </div>
-
-    <div id="teste"></div>
 
     <div class="container">
         <table class="table">
@@ -52,19 +50,8 @@
                 <th scope="col">Deletar</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Molho de Tomate</td>
-                <td>Quero</td>
-                <td>1,30</td>
-                <td>Sim</td>
-                <td>
-                    <button type="submit" class="btn btn-primary">Editar</button>
-                </td>
-                <td>
-                    <button type="submit" class="btn btn-primary">Deletar</button>
-                </td>
-              </tr>
+            <tbody id="tabela-lista-produto">
+
             </tbody>
           </table>
     </div>
