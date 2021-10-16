@@ -1,4 +1,23 @@
-var produtos=[];
+var produtos=[
+    {
+        nome:"Molho de tomate",
+        marca:"Quero",
+        preco:1.30,
+        estoque:"Sim"
+    },
+    {
+        nome:"Pão de forma",
+        marca:"Panco",
+        preco:7,
+        estoque:"Não"
+    },
+    {
+        nome:"Detergente",
+        marca:"Ype",
+        preco:2,
+        estoque:"Sim"
+    }
+];
 
 function criaProduto(){
     var nomeProduto = document.getElementById("nome-produto").value;
@@ -36,7 +55,7 @@ function listaProduto(){
         <td>${produtos[i].preco}</td>
         <td>${produtos[i].estoque}</td>
         <td>
-            <button class="btn btn-primary">Editar</button>
+            <button onclick="editaProduto(${i})" class="btn btn-primary">Editar</button>
         </td>
         <td>
             <button onclick="deletaProduto(${i})" class="btn btn-primary">Deletar</button>
@@ -46,8 +65,36 @@ function listaProduto(){
     tbLista.innerHTML=elemento;
 }
 
+listaProduto();
 
 function deletaProduto(i){
     produtos.splice(i,1);
+    listaProduto()
+}
+
+function editaProduto(i){
+    document.getElementById("nome-produto").value=produtos[i].nome
+    document.getElementById("marca").value=produtos[i].marca
+    document.getElementById("preco").value=produtos[i].preco
+    document.getElementById("estoque").value=produtos[i].estoque
+
+    document.getElementById("btn-cria").innerHTML="Editar"
+    document.getElementById("btn-cria").setAttribute("onclick",`reescreveProduto(${i})`)
+}
+
+function reescreveProduto(i){
+    produtos[i].nome=document.getElementById("nome-produto").value
+    produtos[i].marca=document.getElementById("marca").value
+    produtos[i].preco=document.getElementById("preco").value
+    produtos[i].estoque=document.getElementById("estoque").value
+
+    document.getElementById("nome-produto").value = "";
+    document.getElementById("marca").value = "";
+    document.getElementById("preco").value = "";
+    document.getElementById("estoque").value = "";
+
+    document.getElementById("btn-cria").innerHTML="Criar"
+    document.getElementById("btn-cria").setAttribute("onclick","criaProduto()")
+
     listaProduto()
 }
