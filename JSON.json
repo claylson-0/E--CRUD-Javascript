@@ -1,0 +1,20 @@
+[
+    {
+        "nome":"Molho de tomate",
+        "marca":"Quero",
+        "preco":1.30,
+        "estoque":"Sim"
+    },
+    {
+        "nome":"Pão de forma",
+        "marca":"Panco",
+        "preco":7,
+        "estoque":"Não"
+    },
+    {
+        "nome":"Detergente",
+        "marca":"Ype",
+        "preco":2,
+        "estoque":"Sim"
+    }
+]
